@@ -1,0 +1,8 @@
+# Un flux RSS par ligne. Format : NomCourt | URL_du_flux
+# Les lignes commençant par # sont ignorées.
+
+HubermanLab | https://feeds.megaphone.fm/hubermanlab
+LageDerNation | https://feeds.lagedernation.org/feeds/ldn-mp3.xml
+ChtoSluchilos | https://meduza.io/rss/podcasts/meduza-v-kurse
+Ronzheimer | https://ronzheimer.podigee.io/feed/mp3
+ChinaTalk | https://feeds.megaphone.fm/CHTAL4990341033
