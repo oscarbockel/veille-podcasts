@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name  "veille-podcasts[bot]"
           git config user.email "actions@github.com"
-          git add verbatims syntheses traites.json INDEX.md flux-syntheses.xml || true
+          git add -A
           git diff --cached --quiet || git commit -m "Veille : nouveaux épisodes $(date -u +%F)"
           git pull --rebase origin ${GITHUB_REF_NAME} || true
           git push
