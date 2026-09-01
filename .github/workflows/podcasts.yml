@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: write   # pour enregistrer verbatims et synthèses dans le dépôt
-  models: read      # pour la synthèse via GitHub Models (gratuit)
 
 concurrency:
   group: veille-podcasts
@@ -31,7 +30,7 @@ jobs:
 
       - name: Récupérer, transcrire, synthétiser
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MAX_EPISODES: "6"
           MODELE_WHISPER: "small"
         run: python pipeline.py
