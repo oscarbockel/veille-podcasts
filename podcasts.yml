@@ -1,0 +1,45 @@
+name: Veille podcasts
+
+on:
+  schedule:
+    # Quatre passages par jour (heures UTC) ; chaque passage traite jusqu'à
+    # MAX_EPISODES épisodes, le reste attend le passage suivant.
+    - cron: "17 2,8,14,20 * * *"
+  workflow_dispatch: {}   # permet aussi le lancement manuel depuis l'onglet Actions
+
+permissions:
+  contents: write   # pour enregistrer verbatims et synthèses dans le dépôt
+
+concurrency:
+  group: veille-podcasts
+  cancel-in-progress: false
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    timeout-minutes: 320
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install --quiet feedparser requests faster-whisper
+
+      - name: Récupérer, transcrire, synthétiser
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MAX_EPISODES: "6"
+          MODELE_WHISPER: "small"
+        run: python pipeline.py
+
+      - name: Enregistrer les résultats
+        run: |
+          git config user.name  "veille-podcasts[bot]"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Veille : nouveaux épisodes $(date -u +%F)"
+          git pull --rebase origin ${GITHUB_REF_NAME} || true
+          git push

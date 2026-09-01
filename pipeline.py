@@ -2,7 +2,7 @@
 """
 Chaîne de veille podcasts :
   flux RSS -> téléchargement MP3 -> transcription (faster-whisper)
-           -> verbatim (verbatims/) -> synthèse via GitHub Models (syntheses/)
+           -> verbatim (verbatims/) -> synthèse via l'API Gemini (syntheses/)
 
 Conçu pour tourner dans GitHub Actions, sans machine personnelle.
 État persistant : traites.json (identifiants des épisodes déjà traités).
@@ -32,7 +32,7 @@ DOSSIER_SYNTHESES = RACINE / "syntheses"
 # limites de durée de GitHub Actions ; le reste sera pris au passage suivant).
 MAX_EPISODES_PAR_RUN = int(os.environ.get("MAX_EPISODES", "6"))
 
-# Modèle de transcription : "small" = bon compromis vitesse/qualité en français.
+# Modèle de transcription : "small" = bon compromis vitesse/qualité.
 # Passer à "medium" pour plus de fidélité (plus lent), "base" pour plus de débit.
 MODELE_WHISPER = os.environ.get("MODELE_WHISPER", "small")
 
@@ -40,9 +40,11 @@ MODELE_WHISPER = os.environ.get("MODELE_WHISPER", "small")
 # seuls les N épisodes les plus récents de chaque flux sont traités.
 EPISODES_INITIAUX_PAR_FLUX = 2
 
-# Synthèse via GitHub Models (gratuit avec le jeton du dépôt).
-MODELE_SYNTHESE = os.environ.get("MODELE_SYNTHESE", "openai/gpt-4o-mini")
-URL_MODELS = "https://models.github.ai/inference/chat/completions"
+# Synthèse via l'API Gemini de Google (niveau gratuit, clé dans GEMINI_API_KEY).
+MODELE_SYNTHESE = os.environ.get("MODELE_SYNTHESE", "gemini-2.5-flash")
+URL_MODELS = (
+    "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+)
 
 PROMPT_SYNTHESE = """Tu reçois le verbatim brut (transcription automatique, \
 donc avec des coquilles) d'un épisode de podcast.
@@ -70,9 +72,9 @@ def journal(msg: str) -> None:
 
 
 def slug(texte: str, longueur: int = 70) -> str:
-    texte = unicodedata.normalize("NFKD", texte).encode("ascii", "ignore").decode()
-    texte = re.sub(r"[^A-Za-z0-9]+", "-", texte).strip("-")
-    return texte[:longueur] or "sans-titre"
+    texte = unicodedata.normalize("NFKC", texte)
+    texte = re.sub(r"[^\w]+", "-", texte).strip("-")
+    return texte[:longueur].rstrip("-") or "sans-titre"
 
 
 def charger_etat() -> dict:
@@ -112,6 +114,8 @@ def lire_flux() -> list[tuple[str, str]]:
     import xml.etree.ElementTree as ET
 
     for chemin in list(RACINE.glob("*.opml")) + list(RACINE.glob("*.xml")):
+        if chemin.name == "flux-syntheses.xml":
+            continue
         try:
             arbre = ET.parse(chemin)
         except ET.ParseError:
@@ -154,14 +158,17 @@ def transcrire(chemin_audio: Path) -> str:
 # ---------------------------------------------------------------- synthèse
 
 
-def decouper(texte: str, taille: int = 60000) -> list[str]:
+def decouper(texte: str, taille: int = 120000) -> list[str]:
     return [texte[i : i + taille] for i in range(0, len(texte), taille)]
 
 
 def appel_modele(messages: list[dict]) -> str:
-    jeton = os.environ.get("GITHUB_TOKEN")
+    jeton = os.environ.get("GEMINI_API_KEY")
     if not jeton:
-        raise RuntimeError("GITHUB_TOKEN absent : synthèse impossible.")
+        raise RuntimeError(
+            "GEMINI_API_KEY absente (à créer dans Settings > Secrets) : "
+            "synthèse impossible."
+        )
     for tentative in range(4):
         r = requests.post(
             URL_MODELS,
@@ -173,16 +180,17 @@ def appel_modele(messages: list[dict]) -> str:
                 "model": MODELE_SYNTHESE,
                 "messages": messages,
                 "temperature": 0.3,
-                "max_tokens": 1800,
+                "max_tokens": 2000,
             },
             timeout=180,
         )
-        if r.status_code == 429:  # limite de débit : on patiente
-            attente = 30 * (tentative + 1)
+        if r.status_code in (429, 503):  # limite de débit : on patiente
+            attente = 40 * (tentative + 1)
             journal(f"Limite de débit du service de synthèse ; pause {attente} s.")
             time.sleep(attente)
             continue
         r.raise_for_status()
+        time.sleep(7)  # niveau gratuit : ~10 requêtes/minute
         return r.json()["choices"][0]["message"]["content"]
     raise RuntimeError("Service de synthèse indisponible (limites de débit).")
 
@@ -255,7 +263,11 @@ def principal() -> None:
 
         deja = set(etat.get(nom, []))
         premiere_fois = nom not in etat
-        entrees = flux.entries[: EPISODES_INITIAUX_PAR_FLUX] if premiere_fois else flux.entries
+        entrees = (
+            flux.entries[:EPISODES_INITIAUX_PAR_FLUX]
+            if premiere_fois
+            else flux.entries
+        )
 
         for entree in entrees:
             if traites_total >= MAX_EPISODES_PAR_RUN:
@@ -333,6 +345,36 @@ def principal() -> None:
     journal(f"Terminé : {traites_total} épisode(s) traité(s) durant cette exécution.")
 
 
+def generer_sommaire() -> None:
+    """Reconstruit INDEX.md : tous les épisodes, du plus récent au plus ancien,
+    avec lien direct vers la synthèse et vers le verbatim."""
+    lignes = []
+    for fichier in DOSSIER_VERBATIMS.glob("*/*.md"):
+        emission = fichier.parent.name
+        base = fichier.stem
+        date = base[:10]
+        titre = base[11:].replace("-", " ")
+        syn = DOSSIER_SYNTHESES / emission / fichier.name
+        lien_syn = (
+            f"[synthèse](syntheses/{emission}/{fichier.name})" if syn.exists() else "—"
+        )
+        lignes.append(
+            (
+                date,
+                f"| {date} | {emission} | {titre} | {lien_syn} | "
+                f"[verbatim](verbatims/{emission}/{fichier.name}) |",
+            )
+        )
+    lignes.sort(key=lambda x: x[0], reverse=True)
+    contenu = (
+        "# Sommaire des épisodes\n\n"
+        "| Date | Émission | Épisode | Synthèse | Verbatim |\n"
+        "|---|---|---|---|---|\n" + "\n".join(l for _, l in lignes) + "\n"
+    )
+    (RACINE / "INDEX.md").write_text(contenu, encoding="utf-8")
+    journal(f"Sommaire régénéré ({len(lignes)} épisodes).")
+
+
 def generer_flux_syntheses() -> None:
     """Produit flux-syntheses.xml : un flux RSS contenant le texte intégral
     des synthèses, auquel on peut s'abonner dans Inoreader ou tout lecteur."""
@@ -375,36 +417,6 @@ def generer_flux_syntheses() -> None:
     )
     (RACINE / "flux-syntheses.xml").write_text(xml, encoding="utf-8")
     journal("Flux RSS des synthèses régénéré (flux-syntheses.xml).")
-
-
-def generer_sommaire() -> None:
-    """Reconstruit INDEX.md : tous les épisodes, du plus récent au plus ancien,
-    avec lien direct vers la synthèse et vers le verbatim."""
-    lignes = []
-    for fichier in DOSSIER_VERBATIMS.glob("*/*.md"):
-        emission = fichier.parent.name
-        base = fichier.stem
-        date = base[:10]
-        titre = base[11:].replace("-", " ")
-        syn = DOSSIER_SYNTHESES / emission / fichier.name
-        lien_syn = (
-            f"[synthèse](syntheses/{emission}/{fichier.name})" if syn.exists() else "—"
-        )
-        lignes.append(
-            (
-                date,
-                f"| {date} | {emission} | {titre} | {lien_syn} | "
-                f"[verbatim](verbatims/{emission}/{fichier.name}) |",
-            )
-        )
-    lignes.sort(key=lambda x: x[0], reverse=True)
-    contenu = (
-        "# Sommaire des épisodes\n\n"
-        "| Date | Émission | Épisode | Synthèse | Verbatim |\n"
-        "|---|---|---|---|---|\n" + "\n".join(l for _, l in lignes) + "\n"
-    )
-    (RACINE / "INDEX.md").write_text(contenu, encoding="utf-8")
-    journal(f"Sommaire régénéré ({len(lignes)} épisodes).")
 
 
 if __name__ == "__main__":
