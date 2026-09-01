@@ -1,0 +1,10 @@
+# Rattrapage d'épisodes anciens — une demande par ligne, deux syntaxes :
+#   NomFlux | fragment du titre     (quelques mots du titre, casse indifférente)
+#   NomFlux | derniers:N            (les N plus récents ; déjà traités sautés)
+# Supprimer les lignes une fois servies (sinon elles sont simplement ignorées).
+
+HubermanLab | derniers:5
+LageDerNation | derniers:5
+ChtoSluchilos | derniers:5
+Ronzheimer | derniers:5
+ChinaTalk | derniers:5

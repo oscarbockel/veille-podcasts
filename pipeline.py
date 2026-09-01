@@ -36,9 +36,27 @@ MAX_EPISODES_PAR_RUN = int(os.environ.get("MAX_EPISODES", "6"))
 # Passer à "medium" pour plus de fidélité (plus lent), "base" pour plus de débit.
 MODELE_WHISPER = os.environ.get("MODELE_WHISPER", "small")
 
-# À la première exécution, on n'aspire pas tout l'historique :
-# seuls les N épisodes les plus récents de chaque flux sont traités.
-EPISODES_INITIAUX_PAR_FLUX = 2
+# À la découverte d'un flux, on n'aspire pas tout l'historique :
+# seuls les N épisodes les plus récents sont traités d'emblée.
+EPISODES_INITIAUX_PAR_FLUX = int(os.environ.get("EPISODES_INITIAUX", "5"))
+
+# Aux passages suivants, seuls les épisodes récents sont examinés (fenêtre
+# glissante) ; les archives ne sont traitées que sur demande explicite via
+# le fichier rattrapage.txt (lignes : NomFlux | fragment du titre).
+FENETRE_COURANTE = 15
+FICHIER_RATTRAPAGE = RACINE / "rattrapage.txt"
+
+
+def lire_rattrapage() -> dict[str, list[str]]:
+    demandes: dict[str, list[str]] = {}
+    if FICHIER_RATTRAPAGE.exists():
+        for ligne in FICHIER_RATTRAPAGE.read_text(encoding="utf-8").splitlines():
+            ligne = ligne.strip()
+            if not ligne or ligne.startswith("#") or "|" not in ligne:
+                continue
+            nom, fragment = (p.strip() for p in ligne.split("|", 1))
+            demandes.setdefault(slug(nom, 40), []).append(fragment.lower())
+    return demandes
 
 # Synthèse via l'API Gemini de Google (niveau gratuit, clé dans GEMINI_API_KEY).
 MODELE_SYNTHESE = os.environ.get("MODELE_SYNTHESE", "gemini-2.5-flash")
@@ -148,11 +166,19 @@ def transcrire(chemin_audio: Path) -> str:
     segments, info = _modele_whisper.transcribe(
         str(chemin_audio), vad_filter=True, beam_size=1
     )
-    morceaux = []
+    # Regroupement des segments en paragraphes (~600 caractères), pour un
+    # verbatim lisible et des citations exactes retrouvables d'un seul tenant.
+    paragraphes, courant, taille = [], [], 0
     for seg in segments:
-        morceaux.append(seg.text.strip())
+        courant.append(seg.text.strip())
+        taille += len(seg.text)
+        if taille > 600:
+            paragraphes.append(" ".join(courant))
+            courant, taille = [], 0
+    if courant:
+        paragraphes.append(" ".join(courant))
     journal(f"Transcrit ({info.language}, {info.duration/60:.0f} min d'audio).")
-    return "\n".join(morceaux)
+    return "\n\n".join(paragraphes)
 
 
 # ---------------------------------------------------------------- synthèse
@@ -162,7 +188,7 @@ def decouper(texte: str, taille: int = 120000) -> list[str]:
     return [texte[i : i + taille] for i in range(0, len(texte), taille)]
 
 
-def appel_modele(messages: list[dict]) -> str:
+def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
     jeton = os.environ.get("GEMINI_API_KEY")
     if not jeton:
         raise RuntimeError(
@@ -180,9 +206,9 @@ def appel_modele(messages: list[dict]) -> str:
                 "model": MODELE_SYNTHESE,
                 "messages": messages,
                 "temperature": 0.3,
-                "max_tokens": 2000,
+                "max_tokens": max_sortie,
             },
-            timeout=180,
+            timeout=300,
         )
         if r.status_code in (429, 503):  # limite de débit : on patiente
             attente = 40 * (tentative + 1)
@@ -193,6 +219,57 @@ def appel_modele(messages: list[dict]) -> str:
         time.sleep(7)  # niveau gratuit : ~10 requêtes/minute
         return r.json()["choices"][0]["message"]["content"]
     raise RuntimeError("Service de synthèse indisponible (limites de débit).")
+
+
+# Mettre à "0" dans le workflow pour désactiver la structuration du verbatim
+STRUCTURER = os.environ.get("STRUCTURER", "1") == "1"
+
+
+def structurer_verbatim(verbatim: str) -> str:
+    """Édition légère du verbatim par le modèle : correction des coquilles de
+    transcription et de la ponctuation, suppression des hésitations et faux
+    départs, intertitres (##) et passages saillants en gras. Interdiction de
+    résumer : tout le contenu est conservé. Si un fragment réécrit est
+    anormalement court (contenu perdu), l'original est gardé."""
+    fragments = []
+    morceaux = decouper(verbatim, 20000)
+    for i, morceau in enumerate(morceaux, 1):
+        if len(morceaux) > 1:
+            journal(f"  mise au propre du fragment {i}/{len(morceaux)}…")
+        prompt = (
+            "Voici un fragment de transcription automatique de podcast. "
+            "Rends-le lisible SANS RIEN RÉSUMER NI OMETTRE :\n"
+            "- corrige les erreurs manifestes de transcription (noms propres, "
+            "mots déformés) et la ponctuation ;\n"
+            "- supprime uniquement les hésitations, répétitions accidentelles "
+            "et faux départs ;\n"
+            "- conserve la langue d'origine, le style oral et TOUT le contenu "
+            "(chaque idée, chiffre, exemple, digression) ;\n"
+            "- structure en paragraphes, avec 2 à 5 intertitres thématiques "
+            "en lignes '## Titre' ;\n"
+            "- mets en gras (**…**) les passages les plus importants ou "
+            "novateurs : thèses fortes, chiffres, annonces, désaccords.\n"
+            "Réponds UNIQUEMENT par le texte mis au propre, sans préambule ni "
+            "commentaire.\n\nFragment :\n" + morceau
+        )
+        try:
+            propre = appel_modele(
+                [{"role": "user", "content": prompt}], max_sortie=16000
+            ).strip()
+        except Exception as e:  # noqa: BLE001
+            journal(f"  mise au propre du fragment {i} impossible ({e}).")
+            fragments.append(morceau)
+            continue
+        # Garde-fou anti-condensation : un toilettage ne raccourcit guère.
+        if len(propre) < 0.55 * len(morceau):
+            journal(
+                f"  fragment {i} : réécriture trop courte "
+                f"({len(propre)}/{len(morceau)} car.), original conservé."
+            )
+            fragments.append(morceau)
+        else:
+            fragments.append(propre)
+    return "\n\n".join(fragments)
 
 
 def synthetiser(verbatim: str, titre: str, emission: str) -> str:
@@ -246,6 +323,7 @@ def url_audio(entree) -> str | None:
 
 def principal() -> None:
     etat = charger_etat()
+    rattrapage = lire_rattrapage()
     traites_total = 0
 
     for nom, url in lire_flux():
@@ -263,17 +341,44 @@ def principal() -> None:
 
         deja = set(etat.get(nom, []))
         premiere_fois = nom not in etat
-        entrees = (
+        fenetre = (
             flux.entries[:EPISODES_INITIAUX_PAR_FLUX]
             if premiere_fois
-            else flux.entries
+            else flux.entries[:FENETRE_COURANTE]
         )
+
+        # Rattrapage d'archives : épisodes anciens explicitement demandés,
+        # par fragment de titre (« sleep toolkit ») ou par nombre
+        # (« derniers:5 » = les 5 plus récents, déjà faits exclus).
+        forces_ids = set()
+        entrees = list(fenetre)
+        fragments = rattrapage.get(nom, [])
+        if fragments:
+            candidats = []
+            for f in fragments:
+                m = re.fullmatch(r"derniers?\s*:\s*(\d+)", f)
+                if m:
+                    candidats.extend(flux.entries[: int(m.group(1))])
+                else:
+                    candidats.extend(
+                        e for e in flux.entries
+                        if f in (e.get("title") or "").lower()
+                    )
+            for entree in candidats:
+                ident_e = (
+                    entree.get("id") or entree.get("link")
+                    or entree.get("title", "")
+                )
+                forces_ids.add(ident_e)
+                if entree not in entrees:
+                    entrees.append(entree)
 
         for entree in entrees:
             if traites_total >= MAX_EPISODES_PAR_RUN:
                 break
             ident = entree.get("id") or entree.get("link") or entree.get("title", "")
-            if not ident or ident in deja:
+            force = ident in forces_ids
+            if not ident or (ident in deja and not force):
                 continue
             titre = entree.get("title", "sans titre")
             audio = url_audio(entree)
@@ -289,6 +394,8 @@ def principal() -> None:
                 else datetime.now(timezone.utc).strftime("%Y-%m-%d")
             )
             base = f"{prefixe}-{slug(titre)}"
+            if force and (DOSSIER_VERBATIMS / nom / f"{base}.md").exists():
+                continue  # rattrapage déjà servi
 
             journal(f"  téléchargement : {titre}")
             chemin_mp3 = RACINE / "episode_temp.mp3"
@@ -300,6 +407,28 @@ def principal() -> None:
                             f.write(bloc)
 
                 verbatim = transcrire(chemin_mp3)
+
+                # 1. Synthèse complète (fichier séparé) — peut échouer sans
+                #    bloquer le reste.
+                syn = None
+                try:
+                    syn = synthetiser(verbatim, titre, nom)
+                except Exception as e:  # noqa: BLE001
+                    journal(f"  synthèse impossible ({e}) ; le verbatim est conservé.")
+
+                # 2. Structuration du verbatim (intertitres + gras), texte intact.
+                corps_verbatim = verbatim
+                if STRUCTURER:
+                    try:
+                        corps_verbatim = structurer_verbatim(verbatim)
+                    except Exception as e:  # noqa: BLE001
+                        journal(f"  structuration impossible ({e}) ; verbatim brut.")
+
+                # 3. Chapeau « L'essentiel » : premier bloc de la synthèse.
+                essentiel = syn.split("\n\n")[0].strip() if syn else ""
+                bloc_essentiel = (
+                    f"### L'essentiel\n\n{essentiel}\n\n---\n\n" if essentiel else ""
+                )
 
                 dossier_v = DOSSIER_VERBATIMS / nom
                 dossier_v.mkdir(parents=True, exist_ok=True)
@@ -316,20 +445,18 @@ def principal() -> None:
                     f"(../../verbatims/{nom}/{base}.md)**\n\n---\n\n"
                 )
                 (dossier_v / f"{base}.md").write_text(
-                    entete + lien_vers_syn + verbatim, encoding="utf-8"
+                    entete + lien_vers_syn + bloc_essentiel + corps_verbatim,
+                    encoding="utf-8",
                 )
                 journal(f"  verbatim écrit : verbatims/{nom}/{base}.md")
 
-                try:
-                    syn = synthetiser(verbatim, titre, nom)
+                if syn:
                     dossier_s = DOSSIER_SYNTHESES / nom
                     dossier_s.mkdir(parents=True, exist_ok=True)
                     (dossier_s / f"{base}.md").write_text(
                         entete + lien_vers_verb + syn, encoding="utf-8"
                     )
                     journal(f"  synthèse écrite : syntheses/{nom}/{base}.md")
-                except Exception as e:  # noqa: BLE001
-                    journal(f"  synthèse impossible ({e}) ; le verbatim est conservé.")
 
                 deja.add(ident)
                 traites_total += 1
@@ -375,6 +502,40 @@ def generer_sommaire() -> None:
     journal(f"Sommaire régénéré ({len(lignes)} épisodes).")
 
 
+def _markdown_vers_html(md: str) -> str:
+    """Conversion minimale Markdown -> HTML pour le rendu dans les lecteurs
+    RSS : titres, gras, italique, listes, paragraphes."""
+    from xml.sax.saxutils import escape as esc
+
+    blocs_html = []
+    for bloc in re.split(r"\n\s*\n", md.strip()):
+        b = bloc.strip()
+        if not b:
+            continue
+        if b.startswith("### "):
+            blocs_html.append(f"<h4>{esc(b[4:])}</h4>")
+            continue
+        if b.startswith("## "):
+            blocs_html.append(f"<h3>{esc(b[3:])}</h3>")
+            continue
+        if b.startswith("# "):
+            blocs_html.append(f"<h2>{esc(b[2:])}</h2>")
+            continue
+        lignes = b.splitlines()
+        if all(re.match(r"^\s*[-*•]\s+", l) for l in lignes):
+            items = "".join(
+                f"<li>{esc(re.sub(chr(94) + r'[-*•\s]+', '', l))}</li>" for l in lignes
+            )
+            blocs_html.append(f"<ul>{items}</ul>")
+            continue
+        blocs_html.append(f"<p>{esc(b)}</p>")
+    html = "\n".join(blocs_html)
+    # Gras et italique (après échappement, les ** et * sont intacts)
+    html = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", html, flags=re.S)
+    html = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", html, flags=re.S)
+    return html
+
+
 def generer_flux_syntheses() -> None:
     """Produit flux-syntheses.xml : un flux RSS contenant le texte intégral
     des synthèses, auquel on peut s'abonner dans Inoreader ou tout lecteur."""
@@ -391,6 +552,7 @@ def generer_flux_syntheses() -> None:
         texte = fichier.read_text(encoding="utf-8")
         titre_ligne = texte.splitlines()[0].lstrip("# ").strip() if texte else base
         corps = texte.split("---", 1)[-1].strip()
+        corps_html = _markdown_vers_html(corps)
         lien = f"{base_url}/syntheses/{emission}/{fichier.name}"
         elements.append(
             (
@@ -400,7 +562,7 @@ def generer_flux_syntheses() -> None:
                 f"<link>{escape(lien)}</link>"
                 f"<guid isPermaLink='false'>{escape(f'{emission}/{base}')}</guid>"
                 f"<pubDate>{date}</pubDate>"
-                f"<description>{escape(corps)}</description>"
+                f"<description>{escape(corps_html)}</description>"
                 "</item>",
             )
         )
