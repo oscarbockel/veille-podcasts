@@ -59,7 +59,17 @@ def lire_rattrapage() -> dict[str, list[str]]:
     return demandes
 
 # Synthèse via l'API Gemini de Google (niveau gratuit, clé dans GEMINI_API_KEY).
-MODELE_SYNTHESE = os.environ.get("MODELE_SYNTHESE", "gemini-2.5-flash")
+# Cascade de noms de modèles : l'alias glissant d'abord (survit aux retraits),
+# puis des noms datés en secours ; bascule automatique sur 404.
+MODELES_SYNTHESE = [
+    m for m in [
+        os.environ.get("MODELE_SYNTHESE"),
+        "gemini-flash-latest",
+        "gemini-3.7-flash",
+        "gemini-2.5-flash",
+    ] if m
+]
+_modele_actif = 0
 URL_MODELS = (
     "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 )
@@ -189,13 +199,16 @@ def decouper(texte: str, taille: int = 120000) -> list[str]:
 
 
 def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
+    global _modele_actif
     jeton = os.environ.get("GEMINI_API_KEY")
     if not jeton:
         raise RuntimeError(
             "GEMINI_API_KEY absente (à créer dans Settings > Secrets) : "
             "synthèse impossible."
         )
-    for tentative in range(4):
+    tentatives = 0
+    while tentatives < 4:
+        modele = MODELES_SYNTHESE[_modele_actif]
         r = requests.post(
             URL_MODELS,
             headers={
@@ -203,26 +216,32 @@ def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
                 "Content-Type": "application/json",
             },
             json={
-                "model": MODELE_SYNTHESE,
+                "model": modele,
                 "messages": messages,
                 "temperature": 0.3,
                 "max_tokens": max_sortie,
             },
             timeout=300,
         )
+        if r.status_code == 404 and _modele_actif < len(MODELES_SYNTHESE) - 1:
+            journal(
+                f"Modèle « {modele} » introuvable (404) ; bascule sur "
+                f"« {MODELES_SYNTHESE[_modele_actif + 1]} »."
+            )
+            _modele_actif += 1
+            continue
         if r.status_code in (429, 503):  # limite de débit : on patiente
-            attente = 40 * (tentative + 1)
+            tentatives += 1
+            attente = 40 * tentatives
             journal(f"Limite de débit du service de synthèse ; pause {attente} s.")
             time.sleep(attente)
             continue
-        r.raise_for_status()
+        if not r.ok:
+            corps = " ".join(r.text[:300].split())
+            raise RuntimeError(f"{r.status_code} — {corps}")
         time.sleep(7)  # niveau gratuit : ~10 requêtes/minute
         return r.json()["choices"][0]["message"]["content"]
     raise RuntimeError("Service de synthèse indisponible (limites de débit).")
-
-
-# Mettre à "0" dans le workflow pour désactiver la structuration du verbatim
-STRUCTURER = os.environ.get("STRUCTURER", "1") == "1"
 
 
 def structurer_verbatim(verbatim: str) -> str:
