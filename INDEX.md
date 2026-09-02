@@ -14,3 +14,4 @@
 | 2026-08-12 | LageDerNation | LdN489 Rechtsextremismus amp Klimaleugner Wie neutral muss Schule sein | — | [verbatim](verbatims/LageDerNation/2026-08-12-LdN489-Rechtsextremismus-amp-Klimaleugner-Wie-neutral-muss-Schule-sein.md) |
 | 2026-08-10 | HubermanLab | Using AI to Increase Your Intelligence Enrich Humanity Dr Fei Fei Li | — | [verbatim](verbatims/HubermanLab/2026-08-10-Using-AI-to-Increase-Your-Intelligence-Enrich-Humanity-Dr-Fei-Fei-Li.md) |
 | 2026-08-06 | HubermanLab | Essentials Control Your Brain Chemistry for Focus Motivation Well Bein | — | [verbatim](verbatims/HubermanLab/2026-08-06-Essentials-Control-Your-Brain-Chemistry-for-Focus-Motivation-Well-Bein.md) |
+| 2026-08-03 | HubermanLab | How Your Immune System Works How to Improve It Dr Max Krummel | — | [verbatim](verbatims/HubermanLab/2026-08-03-How-Your-Immune-System-Works-How-to-Improve-It-Dr-Max-Krummel.md) |
