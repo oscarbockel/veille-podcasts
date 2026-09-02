@@ -70,6 +70,21 @@ MODELES_SYNTHESE = [
     ] if m
 ]
 _modele_actif = 0
+
+# Disjoncteur : passe à True quand le quota du jour est épuisé ; le passage
+# s'arrête alors proprement au lieu de s'obstiner appel après appel.
+quota_epuise = False
+
+# Budget temps du passage (minutes) : au-delà, on ne commence plus d'épisode,
+# pour laisser à la sauvegarde le temps de s'exécuter avant le timeout.
+LIMITE_MINUTES = int(os.environ.get("LIMITE_MINUTES", "240"))
+DEBUT_RUN = time.monotonic()
+
+
+def temps_ecoule() -> bool:
+    return time.monotonic() - DEBUT_RUN > LIMITE_MINUTES * 60
+
+
 URL_MODELS = (
     "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 )
@@ -199,7 +214,9 @@ def decouper(texte: str, taille: int = 120000) -> list[str]:
 
 
 def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
-    global _modele_actif
+    global _modele_actif, quota_epuise
+    if quota_epuise:
+        raise RuntimeError("quota du jour épuisé — appel non tenté")
     jeton = os.environ.get("GEMINI_API_KEY")
     if not jeton:
         raise RuntimeError(
@@ -241,7 +258,12 @@ def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
             raise RuntimeError(f"{r.status_code} — {corps}")
         time.sleep(7)  # niveau gratuit : ~10 requêtes/minute
         return r.json()["choices"][0]["message"]["content"]
-    raise RuntimeError("Service de synthèse indisponible (limites de débit).")
+    quota_epuise = True
+    journal(
+        "Quota Gemini du jour vraisemblablement épuisé : les synthèses "
+        "restantes attendront un passage ultérieur."
+    )
+    raise RuntimeError("quota/limites de débit épuisés")
 
 
 def structurer_verbatim(verbatim: str) -> str:
@@ -253,6 +275,9 @@ def structurer_verbatim(verbatim: str) -> str:
     fragments = []
     morceaux = decouper(verbatim, 20000)
     for i, morceau in enumerate(morceaux, 1):
+        if quota_epuise:
+            fragments.append(morceau)
+            continue
         if len(morceaux) > 1:
             journal(f"  mise au propre du fragment {i}/{len(morceaux)}…")
         prompt = (
@@ -346,7 +371,7 @@ def principal() -> None:
     traites_total = 0
 
     for nom, url in lire_flux():
-        if traites_total >= MAX_EPISODES_PAR_RUN:
+        if traites_total >= MAX_EPISODES_PAR_RUN or quota_epuise or temps_ecoule():
             break
         journal(f"Flux « {nom} » : {url}")
         try:
@@ -393,7 +418,9 @@ def principal() -> None:
                     entrees.append(entree)
 
         for entree in entrees:
-            if traites_total >= MAX_EPISODES_PAR_RUN:
+            if traites_total >= MAX_EPISODES_PAR_RUN or quota_epuise or temps_ecoule():
+                if temps_ecoule():
+                    journal("Budget temps du passage atteint ; on s'arrête proprement.")
                 break
             ident = entree.get("id") or entree.get("link") or entree.get("title", "")
             force = ident in forces_ids
