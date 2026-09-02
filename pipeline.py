@@ -248,9 +248,16 @@ def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
             _modele_actif += 1
             continue
         if r.status_code in (429, 503):  # limite de débit : on patiente
+            motif = " ".join(r.text[:400].split())
+            if tentatives == 0:
+                journal(f"Limite de débit — réponse du service : {motif}")
+            if "PerDay" in r.text or "per day" in r.text.lower():
+                quota_epuise = True
+                journal("Limite QUOTIDIENNE atteinte : arrêt des appels pour ce passage.")
+                raise RuntimeError("quota quotidien épuisé")
             tentatives += 1
             attente = 40 * tentatives
-            journal(f"Limite de débit du service de synthèse ; pause {attente} s.")
+            journal(f"Limite de débit ; pause {attente} s.")
             time.sleep(attente)
             continue
         if not r.ok:
@@ -264,6 +271,10 @@ def appel_modele(messages: list[dict], max_sortie: int = 2000) -> str:
         "restantes attendront un passage ultérieur."
     )
     raise RuntimeError("quota/limites de débit épuisés")
+
+
+# Mettre à "0" dans le workflow pour désactiver la mise au propre du verbatim
+STRUCTURER = os.environ.get("STRUCTURER", "1") == "1"
 
 
 def structurer_verbatim(verbatim: str) -> str:
