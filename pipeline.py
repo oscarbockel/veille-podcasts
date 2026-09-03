@@ -524,9 +524,63 @@ def principal() -> None:
             finally:
                 chemin_mp3.unlink(missing_ok=True)
 
+    reparer_orphelins()
     generer_sommaire()
     generer_flux_syntheses()
     journal(f"Terminé : {traites_total} épisode(s) traité(s) durant cette exécution.")
+
+
+def reparer_orphelins() -> None:
+    """Re-synthétise, depuis leur verbatim déjà transcrit, les épisodes dont
+    la synthèse a échoué lors d'un passage antérieur (pannes d'API, quota).
+    Les plus récents d'abord ; dosé par passage pour ménager le quota."""
+    if quota_epuise or temps_ecoule():
+        return
+    max_rep = int(os.environ.get("REPARATIONS_MAX", "4"))
+    orphelins = [
+        f for f in DOSSIER_VERBATIMS.glob("*/*.md")
+        if not (DOSSIER_SYNTHESES / f.parent.name / f.name).exists()
+    ]
+    if not orphelins:
+        return
+    orphelins.sort(key=lambda f: f.stem[:10], reverse=True)
+    journal(
+        f"{len(orphelins)} verbatim(s) sans synthèse ; "
+        f"réparation (au plus {max_rep} par passage)."
+    )
+    faits = 0
+    for fichier in orphelins:
+        if faits >= max_rep or quota_epuise or temps_ecoule():
+            break
+        emission = fichier.parent.name
+        texte = fichier.read_text(encoding="utf-8")
+        titre = texte.splitlines()[0].lstrip("# ").strip() or fichier.stem
+        parts = texte.split("\n\n---\n\n")
+        if len(parts) >= 3 and parts[1].strip().startswith("### L'essentiel"):
+            corps = "\n\n---\n\n".join(parts[2:])
+        elif len(parts) >= 2:
+            corps = "\n\n---\n\n".join(parts[1:])
+        else:
+            corps = texte
+        try:
+            syn = synthetiser(corps, titre, emission)
+        except Exception as e:  # noqa: BLE001
+            journal(f"  réparation impossible ({emission}/{fichier.name}) : {e}")
+            continue
+        entete = (
+            f"# {titre}\n\nÉmission : {emission} — Date : {fichier.stem[:10]}\n\n"
+        )
+        lien_vers_verb = (
+            f"➡️ **[Lire le verbatim intégral]"
+            f"(../../verbatims/{emission}/{fichier.name})**\n\n---\n\n"
+        )
+        dossier_s = DOSSIER_SYNTHESES / emission
+        dossier_s.mkdir(parents=True, exist_ok=True)
+        (dossier_s / fichier.name).write_text(
+            entete + lien_vers_verb + syn, encoding="utf-8"
+        )
+        journal(f"  synthèse réparée : syntheses/{emission}/{fichier.name}")
+        faits += 1
 
 
 def generer_sommaire() -> None:
@@ -611,6 +665,12 @@ def generer_flux_syntheses() -> None:
         corps = texte.split("---", 1)[-1].strip()
         corps_html = _markdown_vers_html(corps)
         lien = f"{base_url}/syntheses/{emission}/{fichier.name}"
+        try:
+            date_rfc = datetime.strptime(date, "%Y-%m-%d").strftime(
+                "%a, %d %b %Y 08:00:00 +0000"
+            )
+        except ValueError:
+            date_rfc = date
         elements.append(
             (
                 date,
@@ -618,7 +678,7 @@ def generer_flux_syntheses() -> None:
                 f"<title>{escape(f'[{emission}] {titre_ligne}')}</title>"
                 f"<link>{escape(lien)}</link>"
                 f"<guid isPermaLink='false'>{escape(f'{emission}/{base}')}</guid>"
-                f"<pubDate>{date}</pubDate>"
+                f"<pubDate>{date_rfc}</pubDate>"
                 f"<description>{escape(corps_html)}</description>"
                 "</item>",
             )
