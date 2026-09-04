@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-03 | HubermanLab | Essentials Use Sleep to Enhance Learning Memory Emotional State Dr Gin | — | [verbatim](verbatims/HubermanLab/2026-09-03-Essentials-Use-Sleep-to-Enhance-Learning-Memory-Emotional-State-Dr-Gin.md) |
+| 2026-09-01 | LageDerNation | LdN491 Krieg gegen Deutschland Was tun gegen Russlands Angriff | — | [verbatim](verbatims/LageDerNation/2026-09-01-LdN491-Krieg-gegen-Deutschland-Was-tun-gegen-Russlands-Angriff.md) |
 | 2026-08-31 | HubermanLab | How to Accelerate Learning Improve Education Joe Liemandt | — | [verbatim](verbatims/HubermanLab/2026-08-31-How-to-Accelerate-Learning-Improve-Education-Joe-Liemandt.md) |
 | 2026-08-31 | ChtoSluchilos | Ударит ли Путин по странам НАТО Обсуждаем с аналитиком Антоном Барбаши | — | [verbatim](verbatims/ChtoSluchilos/2026-08-31-Ударит-ли-Путин-по-странам-НАТО-Обсуждаем-с-аналитиком-Антоном-Барбаши.md) |
 | 2026-08-29 | ChtoSluchilos | Настроения как перед бунтом Пригожина Дворцовый переворот возможен Инт | — | [verbatim](verbatims/ChtoSluchilos/2026-08-29-Настроения-как-перед-бунтом-Пригожина-Дворцовый-переворот-возможен-Инт.md) |
