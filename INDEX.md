@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-07 | HubermanLab | How Mitochondria Control Your Metabolism Dr Jared Rutter | [synthèse](syntheses/HubermanLab/2026-09-07-How-Mitochondria-Control-Your-Metabolism-Dr-Jared-Rutter.md) | [verbatim](verbatims/HubermanLab/2026-09-07-How-Mitochondria-Control-Your-Metabolism-Dr-Jared-Rutter.md) |
 | 2026-09-03 | HubermanLab | Essentials Use Sleep to Enhance Learning Memory Emotional State Dr Gin | — | [verbatim](verbatims/HubermanLab/2026-09-03-Essentials-Use-Sleep-to-Enhance-Learning-Memory-Emotional-State-Dr-Gin.md) |
 | 2026-09-01 | LageDerNation | LdN491 Krieg gegen Deutschland Was tun gegen Russlands Angriff | — | [verbatim](verbatims/LageDerNation/2026-09-01-LdN491-Krieg-gegen-Deutschland-Was-tun-gegen-Russlands-Angriff.md) |
 | 2026-08-31 | HubermanLab | How to Accelerate Learning Improve Education Joe Liemandt | — | [verbatim](verbatims/HubermanLab/2026-08-31-How-to-Accelerate-Learning-Improve-Education-Joe-Liemandt.md) |
