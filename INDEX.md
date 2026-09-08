@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-08 | LageDerNation | LdN492 Sachsen Anhalt Wie kommen Rechtsextreme an die Macht | — | [verbatim](verbatims/LageDerNation/2026-09-08-LdN492-Sachsen-Anhalt-Wie-kommen-Rechtsextreme-an-die-Macht.md) |
 | 2026-09-07 | HubermanLab | How Mitochondria Control Your Metabolism Dr Jared Rutter | [synthèse](syntheses/HubermanLab/2026-09-07-How-Mitochondria-Control-Your-Metabolism-Dr-Jared-Rutter.md) | [verbatim](verbatims/HubermanLab/2026-09-07-How-Mitochondria-Control-Your-Metabolism-Dr-Jared-Rutter.md) |
 | 2026-09-07 | ChtoSluchilos | Обсуждаем победу ультраправой Альтернативы для Германии на выборах в С | — | [verbatim](verbatims/ChtoSluchilos/2026-09-07-Обсуждаем-победу-ультраправой-Альтернативы-для-Германии-на-выборах-в-С.md) |
 | 2026-09-04 | ChtoSluchilos | Летать теперь опасно Обсуждаем как Украина хочет подорвать авиасообщен | — | [verbatim](verbatims/ChtoSluchilos/2026-09-04-Летать-теперь-опасно-Обсуждаем-как-Украина-хочет-подорвать-авиасообщен.md) |
