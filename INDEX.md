@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-09 | ChtoSluchilos | Администрация Трампа снова взялась мирить Россию и Украину Есть ли шан | — | [verbatim](verbatims/ChtoSluchilos/2026-09-09-Администрация-Трампа-снова-взялась-мирить-Россию-и-Украину-Есть-ли-шан.md) |
 | 2026-09-08 | LageDerNation | LdN492 Sachsen Anhalt Wie kommen Rechtsextreme an die Macht | — | [verbatim](verbatims/LageDerNation/2026-09-08-LdN492-Sachsen-Anhalt-Wie-kommen-Rechtsextreme-an-die-Macht.md) |
 | 2026-09-08 | ChtoSluchilos | Сотрудники ФСБ тщательно проверяют личную информацию и гаджеты при пер | [synthèse](syntheses/ChtoSluchilos/2026-09-08-Сотрудники-ФСБ-тщательно-проверяют-личную-информацию-и-гаджеты-при-пер.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-08-Сотрудники-ФСБ-тщательно-проверяют-личную-информацию-и-гаджеты-при-пер.md) |
 | 2026-09-07 | HubermanLab | How Mitochondria Control Your Metabolism Dr Jared Rutter | [synthèse](syntheses/HubermanLab/2026-09-07-How-Mitochondria-Control-Your-Metabolism-Dr-Jared-Rutter.md) | [verbatim](verbatims/HubermanLab/2026-09-07-How-Mitochondria-Control-Your-Metabolism-Dr-Jared-Rutter.md) |
