@@ -2,9 +2,11 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-12 | Ronzheimer | STREIT War die Brandmauer ein Fehler Andreas Rödder vs Justus Bender 1 | [synthèse](syntheses/Ronzheimer/2026-09-12-STREIT-War-die-Brandmauer-ein-Fehler-Andreas-Rödder-vs-Justus-Bender-1.md) | [verbatim](verbatims/Ronzheimer/2026-09-12-STREIT-War-die-Brandmauer-ein-Fehler-Andreas-Rödder-vs-Justus-Bender-1.md) |
 | 2026-09-11 | Ronzheimer | Plötzlich hat die AfD ein Machtproblem Mit Annika Leister | [synthèse](syntheses/Ronzheimer/2026-09-11-Plötzlich-hat-die-AfD-ein-Machtproblem-Mit-Annika-Leister.md) | [verbatim](verbatims/Ronzheimer/2026-09-11-Plötzlich-hat-die-AfD-ein-Machtproblem-Mit-Annika-Leister.md) |
 | 2026-09-11 | ChtoSluchilos | В Украине кризис власти Насколько он серьезен Обсуждаем с Ильей Новико | [synthèse](syntheses/ChtoSluchilos/2026-09-11-В-Украине-кризис-власти-Насколько-он-серьезен-Обсуждаем-с-Ильей-Новико.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-11-В-Украине-кризис-власти-Насколько-он-серьезен-Обсуждаем-с-Ильей-Новико.md) |
 | 2026-09-10 | HubermanLab | Essentials Genes the Inheritance of Memories Across Generations Dr Ode | — | [verbatim](verbatims/HubermanLab/2026-09-10-Essentials-Genes-the-Inheritance-of-Memories-Across-Generations-Dr-Ode.md) |
+| 2026-09-10 | Ronzheimer | Der große AfD Fehler der Deutschen Mit Manfred Lütz | — | [verbatim](verbatims/Ronzheimer/2026-09-10-Der-große-AfD-Fehler-der-Deutschen-Mit-Manfred-Lütz.md) |
 | 2026-09-10 | ChtoSluchilos | Все что нужно знать о дронах на войне Гид по БПЛА от Дмитрия Кузнеца | [synthèse](syntheses/ChtoSluchilos/2026-09-10-Все-что-нужно-знать-о-дронах-на-войне-Гид-по-БПЛА-от-Дмитрия-Кузнеца.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-10-Все-что-нужно-знать-о-дронах-на-войне-Гид-по-БПЛА-от-Дмитрия-Кузнеца.md) |
 | 2026-09-09 | ChtoSluchilos | Администрация Трампа снова взялась мирить Россию и Украину Есть ли шан | — | [verbatim](verbatims/ChtoSluchilos/2026-09-09-Администрация-Трампа-снова-взялась-мирить-Россию-и-Украину-Есть-ли-шан.md) |
 | 2026-09-08 | LageDerNation | LdN492 Sachsen Anhalt Wie kommen Rechtsextreme an die Macht | — | [verbatim](verbatims/LageDerNation/2026-09-08-LdN492-Sachsen-Anhalt-Wie-kommen-Rechtsextreme-an-die-Macht.md) |
