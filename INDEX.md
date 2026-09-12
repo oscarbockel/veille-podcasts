@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-12 | Ronzheimer | ZEITREISE Angriff auf Amerika Die unbequeme Geschichte über 9 11 Mit W | — | [verbatim](verbatims/Ronzheimer/2026-09-12-ZEITREISE-Angriff-auf-Amerika-Die-unbequeme-Geschichte-über-9-11-Mit-W.md) |
 | 2026-09-12 | Ronzheimer | STREIT War die Brandmauer ein Fehler Andreas Rödder vs Justus Bender 1 | [synthèse](syntheses/Ronzheimer/2026-09-12-STREIT-War-die-Brandmauer-ein-Fehler-Andreas-Rödder-vs-Justus-Bender-1.md) | [verbatim](verbatims/Ronzheimer/2026-09-12-STREIT-War-die-Brandmauer-ein-Fehler-Andreas-Rödder-vs-Justus-Bender-1.md) |
 | 2026-09-11 | Ronzheimer | Plötzlich hat die AfD ein Machtproblem Mit Annika Leister | [synthèse](syntheses/Ronzheimer/2026-09-11-Plötzlich-hat-die-AfD-ein-Machtproblem-Mit-Annika-Leister.md) | [verbatim](verbatims/Ronzheimer/2026-09-11-Plötzlich-hat-die-AfD-ein-Machtproblem-Mit-Annika-Leister.md) |
 | 2026-09-11 | ChtoSluchilos | В Украине кризис власти Насколько он серьезен Обсуждаем с Ильей Новико | [synthèse](syntheses/ChtoSluchilos/2026-09-11-В-Украине-кризис-власти-Насколько-он-серьезен-Обсуждаем-с-Ильей-Новико.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-11-В-Украине-кризис-власти-Насколько-он-серьезен-Обсуждаем-с-Ильей-Новико.md) |
