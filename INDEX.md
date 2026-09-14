@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-14 | HubermanLab | The Art of True Happiness Dr Arthur Brooks | — | [verbatim](verbatims/HubermanLab/2026-09-14-The-Art-of-True-Happiness-Dr-Arthur-Brooks.md) |
 | 2026-09-14 | Ronzheimer | Stürzt Merz Wer Kanzler werden könnte | — | [verbatim](verbatims/Ronzheimer/2026-09-14-Stürzt-Merz-Wer-Kanzler-werden-könnte.md) |
 | 2026-09-13 | Ronzheimer | STREIT Braucht Deutschland die AfD Wende Andreas Rödder vs Justus Bend | — | [verbatim](verbatims/Ronzheimer/2026-09-13-STREIT-Braucht-Deutschland-die-AfD-Wende-Andreas-Rödder-vs-Justus-Bend.md) |
 | 2026-09-12 | Ronzheimer | ZEITREISE Angriff auf Amerika Die unbequeme Geschichte über 9 11 Mit W | — | [verbatim](verbatims/Ronzheimer/2026-09-12-ZEITREISE-Angriff-auf-Amerika-Die-unbequeme-Geschichte-über-9-11-Mit-W.md) |
