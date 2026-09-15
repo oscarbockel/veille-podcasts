@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-15 | Ronzheimer | Plötzlich steht Trump unter riesigem Druck Mit Constanze Stelzenmüller | [synthèse](syntheses/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) | [verbatim](verbatims/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) |
+| 2026-09-15 | ChtoSluchilos | Школьники разучились читать и считать Во всем виноват ИИ Говорим с Иль | — | [verbatim](verbatims/ChtoSluchilos/2026-09-15-Школьники-разучились-читать-и-считать-Во-всем-виноват-ИИ-Говорим-с-Иль.md) |
 | 2026-09-14 | HubermanLab | The Art of True Happiness Dr Arthur Brooks | — | [verbatim](verbatims/HubermanLab/2026-09-14-The-Art-of-True-Happiness-Dr-Arthur-Brooks.md) |
 | 2026-09-14 | Ronzheimer | Stürzt Merz Wer Kanzler werden könnte | — | [verbatim](verbatims/Ronzheimer/2026-09-14-Stürzt-Merz-Wer-Kanzler-werden-könnte.md) |
 | 2026-09-14 | ChtoSluchilos | Троица под угрозой разрушения Разве в РПЦ ее никому не жалко | — | [verbatim](verbatims/ChtoSluchilos/2026-09-14-Троица-под-угрозой-разрушения-Разве-в-РПЦ-ее-никому-не-жалко.md) |
