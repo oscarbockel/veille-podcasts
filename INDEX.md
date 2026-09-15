@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-15 | Ronzheimer | Plötzlich steht Trump unter riesigem Druck Mit Constanze Stelzenmüller | [synthèse](syntheses/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) | [verbatim](verbatims/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) |
+| 2026-09-15 | ChinaTalk | ModelTalk Pacing the Frontier | [synthèse](syntheses/ChinaTalk/2026-09-15-ModelTalk-Pacing-the-Frontier.md) | [verbatim](verbatims/ChinaTalk/2026-09-15-ModelTalk-Pacing-the-Frontier.md) |
 | 2026-09-15 | ChtoSluchilos | Школьники разучились читать и считать Во всем виноват ИИ Говорим с Иль | — | [verbatim](verbatims/ChtoSluchilos/2026-09-15-Школьники-разучились-читать-и-считать-Во-всем-виноват-ИИ-Говорим-с-Иль.md) |
 | 2026-09-14 | HubermanLab | The Art of True Happiness Dr Arthur Brooks | — | [verbatim](verbatims/HubermanLab/2026-09-14-The-Art-of-True-Happiness-Dr-Arthur-Brooks.md) |
 | 2026-09-14 | Ronzheimer | Stürzt Merz Wer Kanzler werden könnte | — | [verbatim](verbatims/Ronzheimer/2026-09-14-Stürzt-Merz-Wer-Kanzler-werden-könnte.md) |
