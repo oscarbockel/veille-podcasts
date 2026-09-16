@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-16 | Ronzheimer | Jetzt beginnt der Kanzler Krimi Mit Roland Koch | [synthèse](syntheses/Ronzheimer/2026-09-16-Jetzt-beginnt-der-Kanzler-Krimi-Mit-Roland-Koch.md) | [verbatim](verbatims/Ronzheimer/2026-09-16-Jetzt-beginnt-der-Kanzler-Krimi-Mit-Roland-Koch.md) |
 | 2026-09-15 | Ronzheimer | Plötzlich steht Trump unter riesigem Druck Mit Constanze Stelzenmüller | [synthèse](syntheses/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) | [verbatim](verbatims/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) |
 | 2026-09-15 | ChinaTalk | ModelTalk Pacing the Frontier | [synthèse](syntheses/ChinaTalk/2026-09-15-ModelTalk-Pacing-the-Frontier.md) | [verbatim](verbatims/ChinaTalk/2026-09-15-ModelTalk-Pacing-the-Frontier.md) |
 | 2026-09-15 | ChtoSluchilos | Школьники разучились читать и считать Во всем виноват ИИ Говорим с Иль | — | [verbatim](verbatims/ChtoSluchilos/2026-09-15-Школьники-разучились-читать-и-считать-Во-всем-виноват-ИИ-Говорим-с-Иль.md) |
