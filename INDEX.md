@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-16 | LageDerNation | LdN493 Angriff der Agenten Kann KI wirklich die Menschheit auslöschen | [synthèse](syntheses/LageDerNation/2026-09-16-LdN493-Angriff-der-Agenten-Kann-KI-wirklich-die-Menschheit-auslöschen.md) | [verbatim](verbatims/LageDerNation/2026-09-16-LdN493-Angriff-der-Agenten-Kann-KI-wirklich-die-Menschheit-auslöschen.md) |
 | 2026-09-16 | Ronzheimer | Jetzt beginnt der Kanzler Krimi Mit Roland Koch | [synthèse](syntheses/Ronzheimer/2026-09-16-Jetzt-beginnt-der-Kanzler-Krimi-Mit-Roland-Koch.md) | [verbatim](verbatims/Ronzheimer/2026-09-16-Jetzt-beginnt-der-Kanzler-Krimi-Mit-Roland-Koch.md) |
 | 2026-09-15 | Ronzheimer | Plötzlich steht Trump unter riesigem Druck Mit Constanze Stelzenmüller | [synthèse](syntheses/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) | [verbatim](verbatims/Ronzheimer/2026-09-15-Plötzlich-steht-Trump-unter-riesigem-Druck-Mit-Constanze-Stelzenmüller.md) |
 | 2026-09-15 | ChinaTalk | ModelTalk Pacing the Frontier | [synthèse](syntheses/ChinaTalk/2026-09-15-ModelTalk-Pacing-the-Frontier.md) | [verbatim](verbatims/ChinaTalk/2026-09-15-ModelTalk-Pacing-the-Frontier.md) |
