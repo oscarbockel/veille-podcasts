@@ -4,6 +4,7 @@
 |---|---|---|---|---|
 | 2026-09-17 | HubermanLab | Essentials How to Assess Improve All Aspects of Your Fitness Dr Andy G | — | [verbatim](verbatims/HubermanLab/2026-09-17-Essentials-How-to-Assess-Improve-All-Aspects-of-Your-Fitness-Dr-Andy-G.md) |
 | 2026-09-17 | Ronzheimer | Inside Kanzleramt Wie Merz um seine Macht kämpft Mit Michael Bröcker | — | [verbatim](verbatims/Ronzheimer/2026-09-17-Inside-Kanzleramt-Wie-Merz-um-seine-Macht-kämpft-Mit-Michael-Bröcker.md) |
+| 2026-09-17 | ChtoSluchilos | Операция Вивальди Сможет ли Украина остановить наступление России Дмит | — | [verbatim](verbatims/ChtoSluchilos/2026-09-17-Операция-Вивальди-Сможет-ли-Украина-остановить-наступление-России-Дмит.md) |
 | 2026-09-16 | LageDerNation | LdN493 Angriff der Agenten Kann KI wirklich die Menschheit auslöschen | [synthèse](syntheses/LageDerNation/2026-09-16-LdN493-Angriff-der-Agenten-Kann-KI-wirklich-die-Menschheit-auslöschen.md) | [verbatim](verbatims/LageDerNation/2026-09-16-LdN493-Angriff-der-Agenten-Kann-KI-wirklich-die-Menschheit-auslöschen.md) |
 | 2026-09-16 | Ronzheimer | Jetzt beginnt der Kanzler Krimi Mit Roland Koch | [synthèse](syntheses/Ronzheimer/2026-09-16-Jetzt-beginnt-der-Kanzler-Krimi-Mit-Roland-Koch.md) | [verbatim](verbatims/Ronzheimer/2026-09-16-Jetzt-beginnt-der-Kanzler-Krimi-Mit-Roland-Koch.md) |
 | 2026-09-16 | ChtoSluchilos | Нефть больше 100 долларов за баррель это надолго Что это значит для ми | — | [verbatim](verbatims/ChtoSluchilos/2026-09-16-Нефть-больше-100-долларов-за-баррель-это-надолго-Что-это-значит-для-ми.md) |
