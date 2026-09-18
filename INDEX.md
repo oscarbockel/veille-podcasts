@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-18 | Ronzheimer | Jetzt kämpft Trump um die gefährlichste Technologie der Welt Mit Marie | [synthèse](syntheses/Ronzheimer/2026-09-18-Jetzt-kämpft-Trump-um-die-gefährlichste-Technologie-der-Welt-Mit-Marie.md) | [verbatim](verbatims/Ronzheimer/2026-09-18-Jetzt-kämpft-Trump-um-die-gefährlichste-Technologie-der-Welt-Mit-Marie.md) |
+| 2026-09-18 | ChtoSluchilos | Переговоры между Россией и Украиной с участием США вот вот возобновятс | [synthèse](syntheses/ChtoSluchilos/2026-09-18-Переговоры-между-Россией-и-Украиной-с-участием-США-вот-вот-возобновятс.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-18-Переговоры-между-Россией-и-Украиной-с-участием-США-вот-вот-возобновятс.md) |
 | 2026-09-17 | HubermanLab | Essentials How to Assess Improve All Aspects of Your Fitness Dr Andy G | — | [verbatim](verbatims/HubermanLab/2026-09-17-Essentials-How-to-Assess-Improve-All-Aspects-of-Your-Fitness-Dr-Andy-G.md) |
 | 2026-09-17 | Ronzheimer | Inside Kanzleramt Wie Merz um seine Macht kämpft Mit Michael Bröcker | — | [verbatim](verbatims/Ronzheimer/2026-09-17-Inside-Kanzleramt-Wie-Merz-um-seine-Macht-kämpft-Mit-Michael-Bröcker.md) |
 | 2026-09-17 | ChtoSluchilos | Операция Вивальди Сможет ли Украина остановить наступление России Дмит | — | [verbatim](verbatims/ChtoSluchilos/2026-09-17-Операция-Вивальди-Сможет-ли-Украина-остановить-наступление-России-Дмит.md) |
