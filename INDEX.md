@@ -2,6 +2,8 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-19 | Ronzheimer | Deutschland hat verlernt zu Streiten Mit Christoph Werner dm Chef | [synthèse](syntheses/Ronzheimer/2026-09-19-Deutschland-hat-verlernt-zu-Streiten-Mit-Christoph-Werner-dm-Chef.md) | [verbatim](verbatims/Ronzheimer/2026-09-19-Deutschland-hat-verlernt-zu-Streiten-Mit-Christoph-Werner-dm-Chef.md) |
+| 2026-09-19 | ChinaTalk | WarTalk PLA 2027 Nukes and the Pivot to Asia Pirouette | [synthèse](syntheses/ChinaTalk/2026-09-19-WarTalk-PLA-2027-Nukes-and-the-Pivot-to-Asia-Pirouette.md) | [verbatim](verbatims/ChinaTalk/2026-09-19-WarTalk-PLA-2027-Nukes-and-the-Pivot-to-Asia-Pirouette.md) |
 | 2026-09-18 | Ronzheimer | Jetzt kämpft Trump um die gefährlichste Technologie der Welt Mit Marie | [synthèse](syntheses/Ronzheimer/2026-09-18-Jetzt-kämpft-Trump-um-die-gefährlichste-Technologie-der-Welt-Mit-Marie.md) | [verbatim](verbatims/Ronzheimer/2026-09-18-Jetzt-kämpft-Trump-um-die-gefährlichste-Technologie-der-Welt-Mit-Marie.md) |
 | 2026-09-18 | ChtoSluchilos | Переговоры между Россией и Украиной с участием США вот вот возобновятс | [synthèse](syntheses/ChtoSluchilos/2026-09-18-Переговоры-между-Россией-и-Украиной-с-участием-США-вот-вот-возобновятс.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-18-Переговоры-между-Россией-и-Украиной-с-участием-США-вот-вот-возобновятс.md) |
 | 2026-09-17 | HubermanLab | Essentials How to Assess Improve All Aspects of Your Fitness Dr Andy G | — | [verbatim](verbatims/HubermanLab/2026-09-17-Essentials-How-to-Assess-Improve-All-Aspects-of-Your-Fitness-Dr-Andy-G.md) |
