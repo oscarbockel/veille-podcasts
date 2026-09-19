@@ -61,6 +61,7 @@
 | 2026-08-25 | ChtoSluchilos | Украина хочет разрушить экономику России с помощью ударов по Ozon и Wi | — | [verbatim](verbatims/ChtoSluchilos/2026-08-25-Украина-хочет-разрушить-экономику-России-с-помощью-ударов-по-Ozon-и-Wi.md) |
 | 2026-08-24 | HubermanLab | How to Improve Motivation Overcome Procrastination Dr Masud Husain | — | [verbatim](verbatims/HubermanLab/2026-08-24-How-to-Improve-Motivation-Overcome-Procrastination-Dr-Masud-Husain.md) |
 | 2026-08-24 | ChinaTalk | How AI Becomes a Political Crisis | — | [verbatim](verbatims/ChinaTalk/2026-08-24-How-AI-Becomes-a-Political-Crisis.md) |
+| 2026-08-21 | ChinaTalk | Lessons from the American Civil War | [synthèse](syntheses/ChinaTalk/2026-08-21-Lessons-from-the-American-Civil-War.md) | [verbatim](verbatims/ChinaTalk/2026-08-21-Lessons-from-the-American-Civil-War.md) |
 | 2026-08-20 | HubermanLab | Essentials How to Access Your Creativity Rick Rubin | — | [verbatim](verbatims/HubermanLab/2026-08-20-Essentials-How-to-Access-Your-Creativity-Rick-Rubin.md) |
 | 2026-08-17 | HubermanLab | Neuroscience of Emotions Tools for Improving Emotion Regulation Dr Ral | — | [verbatim](verbatims/HubermanLab/2026-08-17-Neuroscience-of-Emotions-Tools-for-Improving-Emotion-Regulation-Dr-Ral.md) |
 | 2026-08-13 | HubermanLab | Essentials How to Optimize Female Hormone Health for Vitality Longevit | — | [verbatim](verbatims/HubermanLab/2026-08-13-Essentials-How-to-Optimize-Female-Hormone-Health-for-Vitality-Longevit.md) |
