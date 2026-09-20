@@ -66,6 +66,7 @@
 | 2026-08-20 | HubermanLab | Essentials How to Access Your Creativity Rick Rubin | — | [verbatim](verbatims/HubermanLab/2026-08-20-Essentials-How-to-Access-Your-Creativity-Rick-Rubin.md) |
 | 2026-08-19 | ChinaTalk | North Korea s Messiah | — | [verbatim](verbatims/ChinaTalk/2026-08-19-North-Korea-s-Messiah.md) |
 | 2026-08-17 | HubermanLab | Neuroscience of Emotions Tools for Improving Emotion Regulation Dr Ral | — | [verbatim](verbatims/HubermanLab/2026-08-17-Neuroscience-of-Emotions-Tools-for-Improving-Emotion-Regulation-Dr-Ral.md) |
+| 2026-08-17 | ChinaTalk | The Rise of China s Electric Vehicle Industry | [synthèse](syntheses/ChinaTalk/2026-08-17-The-Rise-of-China-s-Electric-Vehicle-Industry.md) | [verbatim](verbatims/ChinaTalk/2026-08-17-The-Rise-of-China-s-Electric-Vehicle-Industry.md) |
 | 2026-08-13 | HubermanLab | Essentials How to Optimize Female Hormone Health for Vitality Longevit | — | [verbatim](verbatims/HubermanLab/2026-08-13-Essentials-How-to-Optimize-Female-Hormone-Health-for-Vitality-Longevit.md) |
 | 2026-08-12 | LageDerNation | LdN489 Rechtsextremismus amp Klimaleugner Wie neutral muss Schule sein | — | [verbatim](verbatims/LageDerNation/2026-08-12-LdN489-Rechtsextremismus-amp-Klimaleugner-Wie-neutral-muss-Schule-sein.md) |
 | 2026-08-10 | HubermanLab | Using AI to Increase Your Intelligence Enrich Humanity Dr Fei Fei Li | — | [verbatim](verbatims/HubermanLab/2026-08-10-Using-AI-to-Increase-Your-Intelligence-Enrich-Humanity-Dr-Fei-Fei-Li.md) |
