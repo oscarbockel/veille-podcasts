@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-20 | Ronzheimer | Worüber die Politik nicht sprechen darf Mit Ex BND Chef Gerhard Schind | [synthèse](syntheses/Ronzheimer/2026-09-20-Worüber-die-Politik-nicht-sprechen-darf-Mit-Ex-BND-Chef-Gerhard-Schind.md) | [verbatim](verbatims/Ronzheimer/2026-09-20-Worüber-die-Politik-nicht-sprechen-darf-Mit-Ex-BND-Chef-Gerhard-Schind.md) |
 | 2026-09-19 | LageDerNation | LdN494 Wofür brauchen wir das ZDF noch Norbert Himmler ZDF Intendant | [synthèse](syntheses/LageDerNation/2026-09-19-LdN494-Wofür-brauchen-wir-das-ZDF-noch-Norbert-Himmler-ZDF-Intendant.md) | [verbatim](verbatims/LageDerNation/2026-09-19-LdN494-Wofür-brauchen-wir-das-ZDF-noch-Norbert-Himmler-ZDF-Intendant.md) |
 | 2026-09-19 | Ronzheimer | Deutschland hat verlernt zu Streiten Mit Christoph Werner dm Chef | [synthèse](syntheses/Ronzheimer/2026-09-19-Deutschland-hat-verlernt-zu-Streiten-Mit-Christoph-Werner-dm-Chef.md) | [verbatim](verbatims/Ronzheimer/2026-09-19-Deutschland-hat-verlernt-zu-Streiten-Mit-Christoph-Werner-dm-Chef.md) |
 | 2026-09-19 | ChinaTalk | WarTalk PLA 2027 Nukes and the Pivot to Asia Pirouette | [synthèse](syntheses/ChinaTalk/2026-09-19-WarTalk-PLA-2027-Nukes-and-the-Pivot-to-Asia-Pirouette.md) | [verbatim](verbatims/ChinaTalk/2026-09-19-WarTalk-PLA-2027-Nukes-and-the-Pivot-to-Asia-Pirouette.md) |
