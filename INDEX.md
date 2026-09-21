@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-21 | HubermanLab | Best Tools for Gut Health Weight Loss Dr Chris Thompson | — | [verbatim](verbatims/HubermanLab/2026-09-21-Best-Tools-for-Gut-Health-Weight-Loss-Dr-Chris-Thompson.md) |
 | 2026-09-21 | Ronzheimer | Wahl Schock für die CDU Mit Paul Ronzheimer Daniel Sturm und Filipp Pi | [synthèse](syntheses/Ronzheimer/2026-09-21-Wahl-Schock-für-die-CDU-Mit-Paul-Ronzheimer-Daniel-Sturm-und-Filipp-Pi.md) | [verbatim](verbatims/Ronzheimer/2026-09-21-Wahl-Schock-für-die-CDU-Mit-Paul-Ronzheimer-Daniel-Sturm-und-Filipp-Pi.md) |
 | 2026-09-20 | Ronzheimer | Worüber die Politik nicht sprechen darf Mit Ex BND Chef Gerhard Schind | [synthèse](syntheses/Ronzheimer/2026-09-20-Worüber-die-Politik-nicht-sprechen-darf-Mit-Ex-BND-Chef-Gerhard-Schind.md) | [verbatim](verbatims/Ronzheimer/2026-09-20-Worüber-die-Politik-nicht-sprechen-darf-Mit-Ex-BND-Chef-Gerhard-Schind.md) |
 | 2026-09-19 | LageDerNation | LdN494 Wofür brauchen wir das ZDF noch Norbert Himmler ZDF Intendant | [synthèse](syntheses/LageDerNation/2026-09-19-LdN494-Wofür-brauchen-wir-das-ZDF-noch-Norbert-Himmler-ZDF-Intendant.md) | [verbatim](verbatims/LageDerNation/2026-09-19-LdN494-Wofür-brauchen-wir-das-ZDF-noch-Norbert-Himmler-ZDF-Intendant.md) |
