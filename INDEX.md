@@ -79,6 +79,7 @@
 | 2026-08-10 | ChinaTalk | 75k Contest Launch ChinaTalk Hiring Evals for the Situation Room | — | [verbatim](verbatims/ChinaTalk/2026-08-10-75k-Contest-Launch-ChinaTalk-Hiring-Evals-for-the-Situation-Room.md) |
 | 2026-08-07 | ChinaTalk | WarTalk Out of Ammo for Real Are CCAs Dumb | — | [verbatim](verbatims/ChinaTalk/2026-08-07-WarTalk-Out-of-Ammo-for-Real-Are-CCAs-Dumb.md) |
 | 2026-08-06 | HubermanLab | Essentials Control Your Brain Chemistry for Focus Motivation Well Bein | — | [verbatim](verbatims/HubermanLab/2026-08-06-Essentials-Control-Your-Brain-Chemistry-for-Focus-Motivation-Well-Bein.md) |
+| 2026-08-06 | ChinaTalk | The FCC s New Robot Rules | — | [verbatim](verbatims/ChinaTalk/2026-08-06-The-FCC-s-New-Robot-Rules.md) |
 | 2026-08-03 | HubermanLab | How Your Immune System Works How to Improve It Dr Max Krummel | — | [verbatim](verbatims/HubermanLab/2026-08-03-How-Your-Immune-System-Works-How-to-Improve-It-Dr-Max-Krummel.md) |
 | 2026-07-30 | HubermanLab | Essentials How to Become Resilient Forge Your Identity Lead Others Joc | [synthèse](syntheses/HubermanLab/2026-07-30-Essentials-How-to-Become-Resilient-Forge-Your-Identity-Lead-Others-Joc.md) | [verbatim](verbatims/HubermanLab/2026-07-30-Essentials-How-to-Become-Resilient-Forge-Your-Identity-Lead-Others-Joc.md) |
 | 2026-07-27 | HubermanLab | Your Top Health Questions Answered | — | [verbatim](verbatims/HubermanLab/2026-07-27-Your-Top-Health-Questions-Answered.md) |
