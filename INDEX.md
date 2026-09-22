@@ -4,6 +4,7 @@
 |---|---|---|---|---|
 | 2026-09-22 | Ronzheimer | Jetzt kippt die deutsche Hauptstadt Mit Ahmad Mansour | — | [verbatim](verbatims/Ronzheimer/2026-09-22-Jetzt-kippt-die-deutsche-Hauptstadt-Mit-Ahmad-Mansour.md) |
 | 2026-09-22 | ChinaTalk | Can AI Beat the Pentagon s Bureaucracy | [synthèse](syntheses/ChinaTalk/2026-09-22-Can-AI-Beat-the-Pentagon-s-Bureaucracy.md) | [verbatim](verbatims/ChinaTalk/2026-09-22-Can-AI-Beat-the-Pentagon-s-Bureaucracy.md) |
+| 2026-09-22 | ChtoSluchilos | Каков реальный результат Единой России на выборах Мы спросили электора | — | [verbatim](verbatims/ChtoSluchilos/2026-09-22-Каков-реальный-результат-Единой-России-на-выборах-Мы-спросили-электора.md) |
 | 2026-09-21 | HubermanLab | Best Tools for Gut Health Weight Loss Dr Chris Thompson | — | [verbatim](verbatims/HubermanLab/2026-09-21-Best-Tools-for-Gut-Health-Weight-Loss-Dr-Chris-Thompson.md) |
 | 2026-09-21 | Ronzheimer | Wahl Schock für die CDU Mit Paul Ronzheimer Daniel Sturm und Filipp Pi | [synthèse](syntheses/Ronzheimer/2026-09-21-Wahl-Schock-für-die-CDU-Mit-Paul-Ronzheimer-Daniel-Sturm-und-Filipp-Pi.md) | [verbatim](verbatims/Ronzheimer/2026-09-21-Wahl-Schock-für-die-CDU-Mit-Paul-Ronzheimer-Daniel-Sturm-und-Filipp-Pi.md) |
 | 2026-09-21 | ChtoSluchilos | Итоги выборов в Госдуму Как они снова нарисовали себе рекорды Говорим | [synthèse](syntheses/ChtoSluchilos/2026-09-21-Итоги-выборов-в-Госдуму-Как-они-снова-нарисовали-себе-рекорды-Говорим.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-21-Итоги-выборов-в-Госдуму-Как-они-снова-нарисовали-себе-рекорды-Говорим.md) |
