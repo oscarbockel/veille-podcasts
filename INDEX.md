@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-23 | Ronzheimer | Die seltsamen Widersprüche über Putins Angriff Mit Sabine Adler | [synthèse](syntheses/Ronzheimer/2026-09-23-Die-seltsamen-Widersprüche-über-Putins-Angriff-Mit-Sabine-Adler.md) | [verbatim](verbatims/Ronzheimer/2026-09-23-Die-seltsamen-Widersprüche-über-Putins-Angriff-Mit-Sabine-Adler.md) |
+| 2026-09-23 | ChtoSluchilos | Как изменится ФСБ самая могущественная спецслужба Роман Анин | — | [verbatim](verbatims/ChtoSluchilos/2026-09-23-Как-изменится-ФСБ-самая-могущественная-спецслужба-Роман-Анин.md) |
 | 2026-09-22 | Ronzheimer | Jetzt kippt die deutsche Hauptstadt Mit Ahmad Mansour | — | [verbatim](verbatims/Ronzheimer/2026-09-22-Jetzt-kippt-die-deutsche-Hauptstadt-Mit-Ahmad-Mansour.md) |
 | 2026-09-22 | ChinaTalk | Julian Gewirtz on Trump Xi Summit AI and Mao Dead Fifty Years Ago | — | [verbatim](verbatims/ChinaTalk/2026-09-22-Julian-Gewirtz-on-Trump-Xi-Summit-AI-and-Mao-Dead-Fifty-Years-Ago.md) |
 | 2026-09-22 | ChinaTalk | Can AI Beat the Pentagon s Bureaucracy | [synthèse](syntheses/ChinaTalk/2026-09-22-Can-AI-Beat-the-Pentagon-s-Bureaucracy.md) | [verbatim](verbatims/ChinaTalk/2026-09-22-Can-AI-Beat-the-Pentagon-s-Bureaucracy.md) |
