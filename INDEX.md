@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-24 | Ronzheimer | Inside CDU Angst Chaos und die Merz Frage Mit Karina Mößbauer | [synthèse](syntheses/Ronzheimer/2026-09-24-Inside-CDU-Angst-Chaos-und-die-Merz-Frage-Mit-Karina-Mößbauer.md) | [verbatim](verbatims/Ronzheimer/2026-09-24-Inside-CDU-Angst-Chaos-und-die-Merz-Frage-Mit-Karina-Mößbauer.md) |
+| 2026-09-24 | HubermanLab | Essentials Optimal Protocols to Build Strength Grow Muscles Dr Andy Ga | [synthèse](syntheses/HubermanLab/2026-09-24-Essentials-Optimal-Protocols-to-Build-Strength-Grow-Muscles-Dr-Andy-Ga.md) | [verbatim](verbatims/HubermanLab/2026-09-24-Essentials-Optimal-Protocols-to-Build-Strength-Grow-Muscles-Dr-Andy-Ga.md) |
 | 2026-09-23 | Ronzheimer | Die seltsamen Widersprüche über Putins Angriff Mit Sabine Adler | [synthèse](syntheses/Ronzheimer/2026-09-23-Die-seltsamen-Widersprüche-über-Putins-Angriff-Mit-Sabine-Adler.md) | [verbatim](verbatims/Ronzheimer/2026-09-23-Die-seltsamen-Widersprüche-über-Putins-Angriff-Mit-Sabine-Adler.md) |
 | 2026-09-23 | LageDerNation | LdN495 Warum wollen Sie Wohnungen enteignen Elif Eralp Spitzenkandidat | — | [verbatim](verbatims/LageDerNation/2026-09-23-LdN495-Warum-wollen-Sie-Wohnungen-enteignen-Elif-Eralp-Spitzenkandidat.md) |
 | 2026-09-23 | ChtoSluchilos | Как изменится ФСБ самая могущественная спецслужба Роман Анин | — | [verbatim](verbatims/ChtoSluchilos/2026-09-23-Как-изменится-ФСБ-самая-могущественная-спецслужба-Роман-Анин.md) |
