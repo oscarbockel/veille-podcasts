@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-25 | Ronzheimer | Die wahre Gefahr der Energie Krise Mit Julia Löhr | — | [verbatim](verbatims/Ronzheimer/2026-09-25-Die-wahre-Gefahr-der-Energie-Krise-Mit-Julia-Löhr.md) |
 | 2026-09-24 | Ronzheimer | Inside CDU Angst Chaos und die Merz Frage Mit Karina Mößbauer | [synthèse](syntheses/Ronzheimer/2026-09-24-Inside-CDU-Angst-Chaos-und-die-Merz-Frage-Mit-Karina-Mößbauer.md) | [verbatim](verbatims/Ronzheimer/2026-09-24-Inside-CDU-Angst-Chaos-und-die-Merz-Frage-Mit-Karina-Mößbauer.md) |
 | 2026-09-24 | ChtoSluchilos | Операция Вивальди Котлы для ВСУ Танки снова в бою Обзор военных событи | — | [verbatim](verbatims/ChtoSluchilos/2026-09-24-Операция-Вивальди-Котлы-для-ВСУ-Танки-снова-в-бою-Обзор-военных-событи.md) |
 | 2026-09-24 | HubermanLab | Essentials Optimal Protocols to Build Strength Grow Muscles Dr Andy Ga | [synthèse](syntheses/HubermanLab/2026-09-24-Essentials-Optimal-Protocols-to-Build-Strength-Grow-Muscles-Dr-Andy-Ga.md) | [verbatim](verbatims/HubermanLab/2026-09-24-Essentials-Optimal-Protocols-to-Build-Strength-Grow-Muscles-Dr-Andy-Ga.md) |
