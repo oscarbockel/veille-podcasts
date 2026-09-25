@@ -3,6 +3,7 @@
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
 | 2026-09-25 | Ronzheimer | Die wahre Gefahr der Energie Krise Mit Julia Löhr | — | [verbatim](verbatims/Ronzheimer/2026-09-25-Die-wahre-Gefahr-der-Energie-Krise-Mit-Julia-Löhr.md) |
+| 2026-09-25 | ChinaTalk | WarTalk Potemkin Pacific Midterm Budget Woes | [synthèse](syntheses/ChinaTalk/2026-09-25-WarTalk-Potemkin-Pacific-Midterm-Budget-Woes.md) | [verbatim](verbatims/ChinaTalk/2026-09-25-WarTalk-Potemkin-Pacific-Midterm-Budget-Woes.md) |
 | 2026-09-25 | ChtoSluchilos | Еще не кончилась война а Европа уже снимает санкции с путинских олигар | [synthèse](syntheses/ChtoSluchilos/2026-09-25-Еще-не-кончилась-война-а-Европа-уже-снимает-санкции-с-путинских-олигар.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-25-Еще-не-кончилась-война-а-Европа-уже-снимает-санкции-с-путинских-олигар.md) |
 | 2026-09-24 | Ronzheimer | Inside CDU Angst Chaos und die Merz Frage Mit Karina Mößbauer | [synthèse](syntheses/Ronzheimer/2026-09-24-Inside-CDU-Angst-Chaos-und-die-Merz-Frage-Mit-Karina-Mößbauer.md) | [verbatim](verbatims/Ronzheimer/2026-09-24-Inside-CDU-Angst-Chaos-und-die-Merz-Frage-Mit-Karina-Mößbauer.md) |
 | 2026-09-24 | ChtoSluchilos | Операция Вивальди Котлы для ВСУ Танки снова в бою Обзор военных событи | — | [verbatim](verbatims/ChtoSluchilos/2026-09-24-Операция-Вивальди-Котлы-для-ВСУ-Танки-снова-в-бою-Обзор-военных-событи.md) |
