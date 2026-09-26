@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-26 | Ronzheimer | Was zu viele Deutsche nicht hören wollen Mit Sascha Chaimowicz | — | [verbatim](verbatims/Ronzheimer/2026-09-26-Was-zu-viele-Deutsche-nicht-hören-wollen-Mit-Sascha-Chaimowicz.md) |
 | 2026-09-25 | Ronzheimer | Die wahre Gefahr der Energie Krise Mit Julia Löhr | — | [verbatim](verbatims/Ronzheimer/2026-09-25-Die-wahre-Gefahr-der-Energie-Krise-Mit-Julia-Löhr.md) |
 | 2026-09-25 | ChinaTalk | WarTalk Potemkin Pacific Midterm Budget Woes | [synthèse](syntheses/ChinaTalk/2026-09-25-WarTalk-Potemkin-Pacific-Midterm-Budget-Woes.md) | [verbatim](verbatims/ChinaTalk/2026-09-25-WarTalk-Potemkin-Pacific-Midterm-Budget-Woes.md) |
 | 2026-09-25 | ChtoSluchilos | Еще не кончилась война а Европа уже снимает санкции с путинских олигар | [synthèse](syntheses/ChtoSluchilos/2026-09-25-Еще-не-кончилась-война-а-Европа-уже-снимает-санкции-с-путинских-олигар.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-25-Еще-не-кончилась-война-а-Европа-уже-снимает-санкции-с-путинских-олигар.md) |
