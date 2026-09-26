@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-26 | Ronzheimer | ZEITREISE Wie aus Nazis plötzlich Musterbürger wurden Mit Norbert Frei | [synthèse](syntheses/Ronzheimer/2026-09-26-ZEITREISE-Wie-aus-Nazis-plötzlich-Musterbürger-wurden-Mit-Norbert-Frei.md) | [verbatim](verbatims/Ronzheimer/2026-09-26-ZEITREISE-Wie-aus-Nazis-plötzlich-Musterbürger-wurden-Mit-Norbert-Frei.md) |
 | 2026-09-26 | Ronzheimer | Was zu viele Deutsche nicht hören wollen Mit Sascha Chaimowicz | — | [verbatim](verbatims/Ronzheimer/2026-09-26-Was-zu-viele-Deutsche-nicht-hören-wollen-Mit-Sascha-Chaimowicz.md) |
 | 2026-09-25 | Ronzheimer | Die wahre Gefahr der Energie Krise Mit Julia Löhr | — | [verbatim](verbatims/Ronzheimer/2026-09-25-Die-wahre-Gefahr-der-Energie-Krise-Mit-Julia-Löhr.md) |
 | 2026-09-25 | ChinaTalk | WarTalk Potemkin Pacific Midterm Budget Woes | [synthèse](syntheses/ChinaTalk/2026-09-25-WarTalk-Potemkin-Pacific-Midterm-Budget-Woes.md) | [verbatim](verbatims/ChinaTalk/2026-09-25-WarTalk-Potemkin-Pacific-Midterm-Budget-Woes.md) |
