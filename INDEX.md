@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-28 | Ronzheimer | Regierung rutscht in Total Blockade Neue Putin Taktik | — | [verbatim](verbatims/Ronzheimer/2026-09-28-Regierung-rutscht-in-Total-Blockade-Neue-Putin-Taktik.md) |
 | 2026-09-27 | Ronzheimer | Ist die CDU bald tot Mit Johannes Winkel | [synthèse](syntheses/Ronzheimer/2026-09-27-Ist-die-CDU-bald-tot-Mit-Johannes-Winkel.md) | [verbatim](verbatims/Ronzheimer/2026-09-27-Ist-die-CDU-bald-tot-Mit-Johannes-Winkel.md) |
 | 2026-09-26 | Ronzheimer | ZEITREISE Wie aus Nazis plötzlich Musterbürger wurden Mit Norbert Frei | [synthèse](syntheses/Ronzheimer/2026-09-26-ZEITREISE-Wie-aus-Nazis-plötzlich-Musterbürger-wurden-Mit-Norbert-Frei.md) | [verbatim](verbatims/Ronzheimer/2026-09-26-ZEITREISE-Wie-aus-Nazis-plötzlich-Musterbürger-wurden-Mit-Norbert-Frei.md) |
 | 2026-09-26 | Ronzheimer | Was zu viele Deutsche nicht hören wollen Mit Sascha Chaimowicz | [synthèse](syntheses/Ronzheimer/2026-09-26-Was-zu-viele-Deutsche-nicht-hören-wollen-Mit-Sascha-Chaimowicz.md) | [verbatim](verbatims/Ronzheimer/2026-09-26-Was-zu-viele-Deutsche-nicht-hören-wollen-Mit-Sascha-Chaimowicz.md) |
