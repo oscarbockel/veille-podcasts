@@ -2,6 +2,7 @@
 
 | Date | Émission | Épisode | Synthèse | Verbatim |
 |---|---|---|---|---|
+| 2026-09-29 | Ronzheimer | Der brutale Machtkampf um die deutsche Hauptstadt Mit Anke Myrrhe | — | [verbatim](verbatims/Ronzheimer/2026-09-29-Der-brutale-Machtkampf-um-die-deutsche-Hauptstadt-Mit-Anke-Myrrhe.md) |
 | 2026-09-28 | Ronzheimer | Regierung rutscht in Total Blockade Neue Putin Taktik | — | [verbatim](verbatims/Ronzheimer/2026-09-28-Regierung-rutscht-in-Total-Blockade-Neue-Putin-Taktik.md) |
 | 2026-09-28 | ChtoSluchilos | Россия усиливает гибридные атаки на ЕС Путин правда готовит новую СВО | [synthèse](syntheses/ChtoSluchilos/2026-09-28-Россия-усиливает-гибридные-атаки-на-ЕС-Путин-правда-готовит-новую-СВО.md) | [verbatim](verbatims/ChtoSluchilos/2026-09-28-Россия-усиливает-гибридные-атаки-на-ЕС-Путин-правда-готовит-новую-СВО.md) |
 | 2026-09-28 | HubermanLab | What Humans Animals and Plants Tell Us About Consciousness Michael Pol | — | [verbatim](verbatims/HubermanLab/2026-09-28-What-Humans-Animals-and-Plants-Tell-Us-About-Consciousness-Michael-Pol.md) |
